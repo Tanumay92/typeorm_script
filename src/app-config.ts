@@ -5,7 +5,7 @@ dotenv.config();
 
 let source = './config/'+process.env.ENV
 
-import { configuration } from './config/config;
+import { config } from './config/config';
 // import { config } from "dotenv";
 
 export let dbOptions : ConnectionOptions = {
