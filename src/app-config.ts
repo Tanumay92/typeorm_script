@@ -1,13 +1,20 @@
 import "reflect-metadata";
 import { ConnectionOptions } from "typeorm";
+import * as dotenv from 'dotenv';
+dotenv.config();
+
+let source = './config/'+process.env.ENV
+
+import { configuration } from './config/config;
+// import { config } from "dotenv";
 
 export let dbOptions : ConnectionOptions = {
     type : "mysql",
-    host : "127.0.0.1",
-    port : 3306,
-    username : "root",
-    password : "123456",
-    database : "typeorm_schema",
+    host :  config.db.host,
+    port : config.db.port,
+    username : config.db.username,
+    password :  config.db.password,
+    database : config.db.database,
     entities : [
         __dirname + '/entities/**/*.js'
    ],
